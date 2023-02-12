@@ -1,0 +1,17 @@
+{
+  "name": "@testing/esbuild",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.17.7",
+    "unplugin-starter": "workspace:^1.0.0"
+  }
+}
