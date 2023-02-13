@@ -5,7 +5,7 @@ on:
     pull_request:
         branches: [main]
 jobs:
-    test:
+    lint:
         timeout-minutes: 60
         runs-on: ubuntu-latest
         steps:
@@ -21,7 +21,7 @@ jobs:
               run: |
                   pnpm install
             - name: Run lint
-              run: pnpm 
+              run: pnpm fmt
             - name: Commit files
               id: commit
               continue-on-error: true
