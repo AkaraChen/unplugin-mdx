@@ -1,11 +1,10 @@
-import path from 'path';
-import Webpack from 'webpack';
+import { spawnSync } from "child_process";
+import { readFileSync } from "fs";
+import path from "path";
 
-test('webpack', async () => {
-  const compiler = Webpack({
-    entry: path.resolve(__dirname, 'fixture/index.js')
-  });
-  expect(() => {
-    compiler.run(() => {});
-  }).not.toThrow();
-});
+test('webpack', () => {
+  spawnSync('pnpm', ['webpack']);
+  const output = path.resolve('./dist/main.js');
+  const content = readFileSync(output);
+  expect(content.includes('Hello')).toBeTruthy()
+})

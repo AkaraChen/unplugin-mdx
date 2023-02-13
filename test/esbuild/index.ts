@@ -1,11 +1,13 @@
 import { build } from 'esbuild';
-import { esbuild } from 'unplugin-starter';
+import { unplugin } from '@akrc/unplugin-mdx';
+import path from 'path';
 
 test('esbuild', async () => {
-  expect(() => {
-    build({
-      // @ts-ignore
-      plugins: [esbuild()]
-    });
-  }).not.toThrow();
+  const result = await build({
+    entryPoints: [path.resolve(__dirname, './fixture/index.mdx')],
+    // @ts-ignore
+    plugins: [unplugin.esbuild()],
+    write: false
+  });
+  expect(result.outputFiles[0].text.includes('h2')).toBeTruthy();
 });

@@ -1,13 +1,19 @@
 import { createUnplugin } from 'unplugin';
-import add from 'unplugin-starter-core';
-import { IOps } from './types';
+import { Opts, Processor } from 'mdxrs-napi';
 
-export const unplugin = createUnplugin((opts: IOps = {}) => {
-  const {} = opts;
+let compiler: Processor;
+
+export const unplugin = createUnplugin((opts: Opts = {}) => {
   return {
     name: 'Starter',
     buildStart() {
-      console.log(add(1, 2));
+      compiler = new Processor(opts);
+    },
+    transformInclude(id) {
+      return id.includes('.mdx');
+    },
+    transform(code) {
+      return compiler.process(code);
     }
   };
 });

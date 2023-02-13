@@ -1,20 +1,25 @@
-import path from 'path';
 import { build, createServer } from 'vite';
-import { vite } from 'unplugin-starter';
+import { RollupOutput } from 'rollup';
+import { unplugin } from '@akrc/unplugin-mdx';
 
 const opts = {
   build: {
-    rollupOptions: {
-      input: path.resolve(__dirname, 'fixture/index.js')
-    }
+    write: false
   },
-  plugins: [vite()]
+  plugins: [unplugin.vite()]
 };
 
 test('vite', async () => {
-  expect(async () => {
-    await build(opts);
-  }).not.toThrow();
+  const result = (await build(opts)) as unknown as RollupOutput;
+  let triggered = false;
+  result.output.forEach(out => {
+    if (out.type === 'chunk') {
+      if (out.code.includes('h1')) {
+        triggered = true;
+      }
+    }
+  });
+  expect(triggered).toBeTruthy();
 });
 
 test('vite server', async () => {

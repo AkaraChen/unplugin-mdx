@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-starter",
+  "name": "@akrc/unplugin-mdx",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "unplugin": "^1.0.1",
-    "unplugin-starter-core": "workspace:^1.0.0"
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "mdxrs-napi": "^0.0.1",
+    "unplugin": "^1.0.1"
   },
   "exports": {
     ".": {
