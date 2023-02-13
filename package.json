@@ -1,17 +1,11 @@
 {
   "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "fmt": "prettier -w .",
     "test": "turbo test",
     "build": "turbo build",
     "dev": "turbo dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.13.0",
     "esbuild": "^0.17.7",
