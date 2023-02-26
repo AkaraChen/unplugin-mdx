@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@akrc/unplugin-mdx": "workspace:^1.0.0",
+    "@akrc/unplugin-mdx": "workspace:*",
     "esbuild": "^0.17.7",
     "esbuild-loader": "^3.0.0",
     "react-dom": "^18.2.0",

@@ -12,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.17.7",
-    "@akrc/unplugin-mdx": "workspace:^1.0.0"
+    "@akrc/unplugin-mdx": "workspace:*"
   }
 }

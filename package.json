@@ -7,13 +7,13 @@
     "dev": "turbo dev"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
-    "esbuild": "^0.17.7",
+    "@types/node": "^18.14.1",
+    "esbuild": "^0.17.10",
     "prettier": "^2.8.4",
     "prettier-config-akrc": "^0.0.0",
     "react": "^18.2.0",
-    "turbo": "^1.7.4",
+    "turbo": "^1.8.2",
     "typescript": "^4.9.5",
-    "vitest": "^0.28.4"
+    "vitest": "^0.29.1"
   }
 }
